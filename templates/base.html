@@ -20,12 +20,14 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <a class="navbar-brand" href="{% url 'home' %}">BookStore</a>
+          <a class="navbar-brand" href="{% url 'book_list' %}">Books</a>
           {% if user.is_authenticated %}
           <ul class="nav navbar-nav ms-auto">
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{user.username}}</a>
                 <div class="dropdown-menu dropdown-menu-end">
-                  {% if user.is_authenticated %}
+                  {% if user.profile %}
                     <a href="{% url 'show_profile' user.profile.pk %}" class="dropdown-item">View Profile</a>
                     <a href="{% url 'edit_profile' user.profile.pk %}" class="dropdown-item">Edit Profile</a>
                     <a href="{% url 'password_change'%}" class="dropdown-item">Change Password</a>
