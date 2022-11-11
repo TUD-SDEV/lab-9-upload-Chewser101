@@ -19,4 +19,3 @@ class ProfileEditView(UpdateView):
 class ProfilePageView(DetailView):
     model = Profile
     template_name = 'registration/user_profle.html'
-    
